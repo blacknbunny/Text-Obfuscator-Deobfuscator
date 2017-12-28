@@ -8,13 +8,13 @@ import (
 )
 
 func main() {
-    reader2 := bufio.NewReader(os.Stdin)
+    reader := bufio.NewReader(os.Stdin)
     fmt.Print("Obfuscated Text : ")
-    text2, _ := reader2.ReadString('\n')
-    newtext2 := text2[:len(text2)-2]
+    text, _ := reader.ReadString('\n')
+    newtext := text[:len(text)-2]
 
     deobfuscated := strings.NewReplacer("AbCfDdgSeZSAzDQQWfFQQW", "", "Vsfq1rtqvvqswfqwq1", "", "rfqvqwrfq1112qrqqq", "", "==", "")
-    output := deobfuscated.Replace(newtext2)
+    output := deobfuscated.Replace(newtext)
 
     fmt.Println("Deobfuscated :", output)
 }
